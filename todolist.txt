@@ -1,0 +1,6 @@
+make game smoother by :
+
+make units smaller, make movement smaller, make refresh more frequent
+
+resize window
+
