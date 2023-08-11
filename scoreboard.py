@@ -13,7 +13,11 @@ class Scoreboard(Turtle):
         self.update_board()
 
     def update_board(self):
-        self.write(f"SCORE: {self.score}", move=False, align="center", font=("Arial", 18, "bold"))
+        self.write(f"SCORE: {self.score}", move=False, align="center", font=("Courier", 18, "bold"))
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME OVER", align="center", font=("Courier", 24, "bold"))
 
     def increase_score(self):
         self.clear()
@@ -28,4 +32,4 @@ class Instructions(Scoreboard):
         self.goto(0, -290)
         self.clear()
         self.write(f"USE  W, A, S, D  TO MOVE", move=False, align="center",
-                   font=("Arial", 18, "bold"))
+                   font=("Courier", 18, "bold"))
