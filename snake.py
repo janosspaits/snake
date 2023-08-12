@@ -56,3 +56,11 @@ class Sneki:
         if self.head.heading() != UP and self.direction_change < 1:
             self.head.setheading(DOWN)
             self.direction_change += 1
+
+    def reset(self):
+        for segment in self.segments:
+            segment.hideturtle()
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+        self.head.setheading(RIGHT)
