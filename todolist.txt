@@ -1,6 +1,12 @@
 make game smoother by :
 
-make units smaller, make movement smaller, make refresh more frequent
+make units smaller, make movement smaller, make refresh more frequent - DONE
 
-resize window
+resize window - DONE
+
+restart feature - DONE
+
+graphics updates - ?
+
+wall to tall teleport - ?
 
