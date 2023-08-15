@@ -4,34 +4,40 @@ from snake import Sneki
 from food import Food
 from scoreboard import Scoreboard  # Instructions
 
+speed = 0.1
+
 
 def start_game():
-    # Reset game state
+    global speed
     snake.reset()
     food.refresh()
     scoreboard.reset_scoreboard()
     game_is_on = True
     while game_is_on:
         screen.update()
-        time.sleep(0.09)
+        time.sleep(speed)
         snake.move()
 
         if snake.head.distance(food) < 8:
             food.refresh()
             snake.extend()
             scoreboard.increase_score()
+            if scoreboard.score % 3 == 0:
+                speed *= 0.8
 
         if snake.head.xcor() > 248 or snake.head.xcor() < -248 or snake.head.ycor() > 248 \
                 or snake.head.ycor() < -248:
             game_is_on = False
             scoreboard.game_over()
             scoreboard.restart_instructions()
+            speed = 0.1
 
         for segment in snake.segments[1:]:
             if snake.head.distance(segment) < 9:
                 game_is_on = False
                 scoreboard.game_over()
                 scoreboard.restart_instructions()
+                speed = 0.1
 
 
 screen = Screen()
